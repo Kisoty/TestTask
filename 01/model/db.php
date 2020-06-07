@@ -54,7 +54,7 @@ Class DB
             }
         }
         else {
-            echo 'Беда, нет подключения к сервису. Проверьте ваше подключение пишите жалобы Европейскому Центральному банку';
+            echo 'Беда, нет подключения к сервису. Проверьте ваше подключение, пишите жалобы Европейскому Центральному банку';
         }
         $this->db_connect = NULL;
     }
@@ -69,7 +69,7 @@ Class DB
                 $this->names[$i] = $xml->currency;
                 $stmt->execute(['name' => $this->names[$i], 'coeff' => $rates[$i]]);
             }
-        }else {
+        } else {
         }
         $stmt = $this->updTime = $this->db_connect->query('SELECT `time` FROM `eur_currency` WHERE `name`= "USD"');
         $this->updTime = $stmt->fetch()['time'];
